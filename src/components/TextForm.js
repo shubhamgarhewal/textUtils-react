@@ -61,18 +61,18 @@ export default function TextForm(props) {
   <div className="mb-3">
     <textarea className="form-control" id="myBox" onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'? '#152248bf':'white', color:props.mode==='dark'? 'white':'#152248bf'}} value={text} rows="10"></textarea>
   </div>
-  <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to lowercase</button>
-  <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to upppercase</button>
-  <button className="btn btn-primary mx-1" onClick={handleClearText}>Clear Text</button>
-  <button className="btn btn-primary mx-1" onClick={handleAltText}>AlTeRnAtE tExT</button>  
-  <button className="btn btn-primary mx-1" onClick={handleRemoveExtraSpace}>remove extra space</button>  
-  <button className="btn btn-primary mx-1" onClick={handleCopyText}>copy text</button>  
+  <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to lowercase</button>
+  <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to upppercase</button>
+  <button className="btn btn-primary mx-1 my-1" onClick={handleClearText}>Clear Text</button>
+  <button className="btn btn-primary mx-1 my-1" onClick={handleAltText}>AlTeRnAtE tExT</button>  
+  <button className="btn btn-primary mx-1 my-1" onClick={handleRemoveExtraSpace}>remove extra space</button>  
+  <button className="btn btn-primary mx-1 my-1" onClick={handleCopyText}>copy text</button>  
   </div>
     <div className="container my-4">
     <p>{parseInt(0.008 * text.split(" ").length)} min read.</p>
     <h2>Your Text Summary</h2>
-    <p>{text.split(" ").length-1} Words</p>
-    <p>{text.trim().length} Characters</p>
+    <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words</p>
+    <p>{text.split(" ").join("").length} Characters</p>
     <p>{text.split(".").length-1} No. of Sentences</p>
     <h2>Preview Text</h2>
     <p>{text}</p>
@@ -82,6 +82,7 @@ export default function TextForm(props) {
   </>
   )
 }
+
  
 // Notes ->
 // useState is a hook, used to make set variable 

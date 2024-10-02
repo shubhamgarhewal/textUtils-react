@@ -4,8 +4,6 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React,{useState} from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
 
 function App() {
   const[mode, setMode] = useState("light"); // whether dark mode is enabled or not || currently by default the mode is light, which we have set inside useState
@@ -38,39 +36,17 @@ function App() {
       document.title ="TextUtils - Light Mode"
     }
   } 
-
-  const router = createBrowserRouter([
-    {
-      path:"/textUtils-react",
-      element:  <>
-      		<Navbar title="TextUtils" mode={mode} toggleMode = {toggleMode} toggleText={toggleText}/>  
-                <Alert alert={alert}/>
-                <div className="container my-3" >
-                <TextForm showAlert={showAlert} heading="Write your text below to analyze..." mode={mode}/> 
-                </div>  
-                </> 
-    },
-    
-    {
-      path:"/about",
-      element:  <>
-      		<Navbar title="TextUtils" mode={mode} toggleMode = {toggleMode} toggleText={toggleText}/> 
-                <Alert alert={alert}/>
-                <div className="container my-3" >
-                <About/> 
-                </div> 
-                </> 
-                
-    },
-  ])
   
   return ( 
    <>
     {/* <Navbar title="TextUtils" aboutText="About TextUtils" />  */}
     {/* <Navbar/>  */}
-     
-    <RouterProvider router={router} />
-    
+      <Navbar title="TextUtils" mode={mode} toggleMode = {toggleMode} toggleText={toggleText}/>
+      <Alert alert={alert}/>
+    <div className="container my-3">
+      {/* <TextForm showAlert={showAlert} heading="Write your text below to analyze..." mode={mode}/>  */}
+       <About mode={mode}/>
+    </div>
   </>
   );
 }
