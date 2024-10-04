@@ -32,7 +32,7 @@ function App() {
     }
     else{
       setMode("light");
-      setToggleText("dark mode")
+      setToggleText("dark mode") 
       document.body.style.backgroundColor ='white'
       showAlert("Light mode is enabled", "success");
       document.title ="TextUtils - Light Mode"
@@ -57,7 +57,7 @@ function App() {
       		<Navbar title="TextUtils" mode={mode} toggleMode = {toggleMode} toggleText={toggleText}/> 
                 <Alert alert={alert}/>
                 <div className="container my-3" >
-                <About/> 
+                <About mode={mode}/>   
                 </div> 
                 </> 
                 

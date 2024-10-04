@@ -6,15 +6,19 @@ export default function About(props) {
 
   // })
  let myStyle ={
-  color : props.mode ==='dark'?'white':'black',
-  backgroundColor : props.mode ==='dark'?'black':'white',
+  color : props.mode ==='dark'?'white':'#4f5975',
+  backgroundColor : props.mode ==='dark'?'rgb(67 71 86':'white',
  }
+
+//  let myStyle2 ={
+//   border : props.mode === 'dark'? '5px solid black' :'white',
+//  }
 
 
 
   return (
-    <div className='container my-3' style={myStyle}>
-      <div className="accordion" id="accordionExample">
+    <div className='container my-3' style={{padding:'0px'}} >
+      <div className="accordion" id="accordionExample" >
   <div className="accordion-item">
     <h2 className="accordion-header" style={myStyle}>
       <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={myStyle}>
@@ -28,7 +32,7 @@ export default function About(props) {
     </div>
   </div>
   <div className="accordion-item">
-    <h2 className="accordion-header" >
+    <h2 className="accordion-header" style={myStyle} >
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={myStyle}>
         Accordion Item #2
       </button>
